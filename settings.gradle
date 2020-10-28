@@ -1,0 +1,3 @@
+include ':skinplugin'
+include ':zhuangshi'
+rootProject.name = "DesignMode"
