@@ -43,7 +43,15 @@ public class SkinManager {
         Set<Activity> keys = mSkinViews.keySet();
         for (Activity activity : keys) {
             List<SkinView> skinViews = mSkinViews.get(activity);
-
+            for (SkinView skinView : skinViews) {
+                skinView.skin();
+            }
         }
+
+        return 0 ;
+    }
+
+    public SkinResource getSkinResources() {
+        return mSkinResource;
     }
 }

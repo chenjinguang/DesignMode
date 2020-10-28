@@ -42,5 +42,6 @@ public abstract class  BaseSkinActivity extends BaseActivity {
 
 
     private View createView(View parent, String name, Context context, AttributeSet attrs) {
+
     }
 }
