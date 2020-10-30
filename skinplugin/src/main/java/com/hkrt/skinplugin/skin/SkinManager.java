@@ -54,4 +54,33 @@ public class SkinManager {
     public SkinResource getSkinResources() {
         return mSkinResource;
     }
+
+    /**
+     * 恢复默认皮肤
+     */
+    public int restoreDefault(){
+        return 0;
+    }
+
+    /**
+     * 通过activity 获取skinViews
+     */
+    public List<SkinView> getSkinViews(Activity activity){
+        return mSkinViews.get(activity);
+    }
+
+    /**
+     * 注册
+     *
+     */
+    public void register(Activity activity,List<SkinView> skinViews){
+        mSkinViews.put(activity,skinViews);
+    }
+
+    /**
+     * 获取当前皮肤资源
+     */
+    public SkinResource getSkinResource(){
+        return mSkinResource;
+    }
 }

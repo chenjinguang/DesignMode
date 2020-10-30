@@ -10,7 +10,7 @@ import com.hkrt.skinplugin.skin.SkinManager;
 import com.hkrt.skinplugin.skin.SkinResource;
 
 public enum SkinType {
-
+    //字体颜色
     TEXT_COLOR("textColor"){
         @Override
         public void skin(View view, String resName) {
@@ -28,7 +28,9 @@ public enum SkinType {
         public void skin(View view, String resName) {
             SkinResource skinResource = getSkinResource();
             Drawable drawableByName = skinResource.getDrawableByName(resName);
-            if(drawableByName == null) return;
+            if(drawableByName == null) {
+                return;
+            }
             ImageView imageView = (ImageView) view;
             imageView.setImageDrawable(drawableByName);
         }
@@ -38,7 +40,7 @@ public enum SkinType {
         public void skin(View view, String resName) {
             SkinResource skinResource = getSkinResource();
             Drawable drawableByName = skinResource.getDrawableByName(resName);
-            if(drawableByName != null){
+            if(drawableByName != null && view instanceof ImageView){
                 ImageView imageView = (ImageView) view;
                 imageView.setImageDrawable(drawableByName);
             }
