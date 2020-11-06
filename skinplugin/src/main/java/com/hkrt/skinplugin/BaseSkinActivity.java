@@ -53,6 +53,9 @@ public abstract class  BaseSkinActivity extends BaseActivity {
             SkinView skinView = new SkinView(view,skinAttrList);
             //统一交给skinManager管理
             manageSkin(skinView);
+
+            //判断一下要不要换肤
+            SkinManager.getInstance().checkChangeSkin(skinView);
         }
 
         return view;
@@ -104,5 +107,11 @@ public abstract class  BaseSkinActivity extends BaseActivity {
             }
             parent = parent.getParent();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        SkinManager.getInstance().unRegister(this);
+        super.onDestroy();
     }
 }

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.hkrt.skinplugin.skin.SkinManager;
 import com.hkrt.skinplugin.skin.SkinResource;
+import com.hkrt.views.PayPsdInputView;
 
 public enum SkinType {
     //字体颜色
@@ -21,6 +22,19 @@ public enum SkinType {
             }
             TextView textView = (TextView) view;
             textView.setTextColor(colorByName);
+        }
+    },
+    //BottomLine颜色
+    BOTTOM_LINE_COLOR("bottomLineColor"){
+        @Override
+        public void skin(View view, String resName) {
+            SkinResource skinResource = getSkinResource();
+            ColorStateList colorByName = skinResource.getColorByName(resName);
+            if(colorByName == null){
+                return;
+            }
+            PayPsdInputView payPsdInputView = (PayPsdInputView) view;
+            payPsdInputView.setBottomLineColor(colorByName.getDefaultColor());
         }
     },
     SRC("src"){

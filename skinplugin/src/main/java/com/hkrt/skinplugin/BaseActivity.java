@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hkrt.skinplugin.skin.callback.ISkinChangeListener;
+
 
 /**
  * Email 240336124@qq.com
@@ -14,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * Version 1.0
  * Description: 整合应用的BaseActivity
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements ISkinChangeListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

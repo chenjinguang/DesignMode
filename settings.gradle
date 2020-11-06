@@ -1,3 +1,5 @@
+include ':service_keep_alive'
+include ':aidlservice'
 include ':skinplugin'
 include ':zhuangshi'
 rootProject.name = "DesignMode"

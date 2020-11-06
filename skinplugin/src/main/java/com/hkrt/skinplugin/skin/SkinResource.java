@@ -27,8 +27,7 @@ public class SkinResource {
             Resources superResources = context.getResources();
             AssetManager assetManager = AssetManager.class.newInstance();
             Method method  = assetManager.getClass().getDeclaredMethod("addAssetPath",String.class);
-            method.invoke(assetManager, Environment.getExternalStorageDirectory().getAbsolutePath()
-                    + File.separator + "red.skin");
+            method.invoke(assetManager, skinPath);
 
             mSkinResources = new Resources(assetManager,superResources.getDisplayMetrics(),superResources.getConfiguration());
 
@@ -70,4 +69,19 @@ public class SkinResource {
             return null;
         }
     }
+
+//    /**
+//     * 通过名字获取密码输入框底部颜色
+//     * @param resName
+//     * @return
+//     */
+//    public ColorStateList getBottomLineColorByName(String resName){
+//        try{
+//            int resId = mSkinResources.getIdentifier(resName,"color",mPackageName);
+//            return mSkinResources.getColorStateList(resId);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
 }

@@ -1,19 +1,22 @@
 package com.hkrt.skinplugin;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.hkrt.skinplugin.skin.SkinManager;
+import com.hkrt.skinplugin.skin.SkinResource;
+import com.hkrt.views.PayPsdInputView;
 
 import java.io.File;
 
 public class MainActivity extends BaseSkinActivity {
 
+
+    PayPsdInputView payPsdInputView;
     @Override
     protected void initData() {
         // 1.敲一下，不要纠结，回过头再去看
@@ -24,6 +27,7 @@ public class MainActivity extends BaseSkinActivity {
     @Override
     protected void initView() {
         // 初始化 View
+        payPsdInputView = findViewById(R.id.pay_pwd_edittext);
         // extends Activity mImageIv is ImageView
         // extends AppCompatActivity mImageView is AppCompatImageView  tint
     }
@@ -60,7 +64,18 @@ public class MainActivity extends BaseSkinActivity {
 
 
     public void skin2(View view){
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this,MainActivity.class);
+//        startActivity(intent);
+        payPsdInputView.setBottomLineColor(Color.BLUE);
+    }
+
+    @Override
+    public void changeSkin(SkinResource resource) {
+        //做一些第三方View的改变
+//        ColorStateList colorByName = resource.getBottomLineColorByName("bottomLineColor");
+//        if(colorByName == null){
+//            return;
+//        }
+//        payPsdInputView.setBottomLineColor(colorByName.getDefaultColor());
     }
 }
